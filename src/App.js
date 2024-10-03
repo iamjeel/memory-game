@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import Card from './components/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 const UNSPLASH_API_URL = 'https://api.unsplash.com/photos/random';
@@ -11,8 +12,8 @@ const App = () => {
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [level, setLevel] = useState(1);  // Track current level
-  const [isComplete, setIsComplete] = useState(false);  // Track level completion
+  const [level, setLevel] = useState(1);
+  const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
     if (!UNSPLASH_ACCESS_KEY) {
@@ -20,13 +21,14 @@ const App = () => {
       return;
     }
     fetchImages();
-  }, [level]);  // Refresh images when the level changes
+  }, [level]);
 
   const fetchImages = async () => {
     setIsLoading(true);
     try {
       const { data } = await axios.get(UNSPLASH_API_URL, {
-        params: { count: 6,query: 'cartoon', },  // Fixed count of 6 cards
+        params: { count: 6, query: 'cartoon, comic',
+        },
         headers: { Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}` },
       });
 
@@ -55,11 +57,10 @@ const App = () => {
         if (firstCard.src === card.src) {
           setMatchedCards((prev) => [...prev, firstCard.src]);
 
-          // Check if all cards are matched
           if (matchedCards.length + 1 === cards.length / 2) {
             setIsComplete(true);
             setTimeout(() => {
-              setLevel((prevLevel) => prevLevel + 1);  // Move to the next level
+              setLevel((prevLevel) => prevLevel + 1);
               setMatchedCards([]);
               setFlippedCards([]);
             }, 1000);
@@ -85,14 +86,14 @@ const App = () => {
     setCards([]);
     setFlippedCards([]);
     setMatchedCards([]);
-    fetchImages();  // Fetch new images for the current level
+    fetchImages();
   };
 
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>Memory Tester</h1>
-        <h2>Level {level}</h2>
+    <div className="app container text-center">
+      <header className="app-header mb-4">
+        <h1 className="game-title">Flip & Match</h1>
+        <h2 className="game-level">Level {level}</h2>
         {isComplete}
         <button className="refresh-button" onClick={handleRefresh}>
           Refresh
@@ -101,20 +102,22 @@ const App = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div className="game-board">
+        <div className="game-board row no-gutters">
           {cards.map((card) => (
-            <Card
-              key={card.id}
-              image={card}
-              onClick={() => handleCardClick(card)}
-              isFlipped={flippedCards.includes(card) || matchedCards.includes(card.src)}
-            />
+            <div key={card.id} className="col-4">
+              <Card
+                image={card}
+                onClick={() => handleCardClick(card)}
+                isFlipped={flippedCards.includes(card) || matchedCards.includes(card.src)}
+              />
+            </div>
           ))}
         </div>
       )}
-          <footer className="app-footer">
-      <p>By Aak Studio 2024</p>
-    </footer>
+      <footer className="app-footer mt-4">
+      <p>&copy; AAK Studio 2024</p>
+      <a href="https://buymeacoffee.com/iamjeel" target="_blank" rel="noopener noreferrer" className="coffee-link"> Buy us a Coffee if you liked playing the game!!</a>
+      </footer>
     </div>
   );
 };

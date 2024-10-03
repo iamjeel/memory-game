@@ -1,44 +1,87 @@
+body {
+  background-color: #f9f9f9;
+  font-family: "Courier New", Courier, monospace;
+  color: #333;
+}
+
+.game-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+.game-level {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.game-status {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.refresh-button {
+  padding: 10px 20px;
+  background-color: #ccc;
+  border: 2px solid #666;
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.refresh-button:hover {
+  background-color: #ddd;
+}
+
 .game-board {
   display: grid;
-  grid-template-columns: repeat(4, 150px);
-  grid-gap: 20px;
+  grid-template-columns: repeat(4, 100px); /* 4 cards per row */
+  grid-gap: 20px; /* Space between cards */
   justify-content: center;
+  margin-top: 20px;
 }
 
 .card {
-  width: 150px;
-  height: 150px;
-  background-color: #f0f0f0;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border: 2px solid #000;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  border: 2px solid #ddd;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.05);
+  font-size: 2rem;
 }
 
 .card-back {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: 1px solid #000;
 }
 
-.app {
+.refresh-button {
+  padding: 10px 20px;
+  background-color: #ccc;
+  border: 2px solid #666;
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.app-footer {
+  padding: 10px;
+  background-color: #e9e9e9;
+  font-size: 0.9rem;
+  color: #333;
   text-align: center;
+  border-top: 1px solid #ddd;
 }
-
-.app-header h3 {
-  color: green;
-  font-size: 1.2rem;
-}
-
-
-

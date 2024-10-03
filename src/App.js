@@ -6,6 +6,9 @@ import './App.css';
 
 const UNSPLASH_API_URL = 'https://api.unsplash.com/photos/random';
 const UNSPLASH_ACCESS_KEY = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
+console.log('Unsplash API Key:', process.env.REACT_APP_UNSPLASH_ACCESS_KEY);
+console.log('Unsplash API Key:', process.env.REACT_APP_UNSPLASH_ACCESS_KEY);
+
 
 const App = () => {
   const [cards, setCards] = useState([]);

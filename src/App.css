@@ -34,3 +34,11 @@ img {
 .app {
   text-align: center;
 }
+
+.app-header h3 {
+  color: green;
+  font-size: 1.2rem;
+}
+
+
+

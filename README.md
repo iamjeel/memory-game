@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+'Subject: Portfolio'
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Flip & Match Game
 
-## Available Scripts
+A fun and interactive memory game built with React.js, styled with Bootstrap, and featuring audio feedback for clicks, matches, and level completion. Match all the pairs to advance to the next level!
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Dynamic image cards fetched from Lorem Picsum/ Unsplash
+- Sound effects for game interactions
+- Progressive levels with increasing difficulty
+- Responsive design using Bootstrap
+- Caching mechanism to prevent image reloads on the same level
+- Refresh option to restart the current level
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Live Demo](#) - Link to your deployed application (e.g., on Netlify, Vercel, or GitHub Pages)
 
-### `npm test`
+## Screenshot
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Game Screenshot](#)  
+_Add a screenshot of your game here._
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React.js**: Frontend framework
+- **Bootstrap**: For responsive styling
+- **Lorem Picsum**: Image API for dynamic images
+- **HTML5 Audio**: For sound effects
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation and Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Follow these steps to run the project locally:
 
-### `npm run eject`
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/iamjeel/flip-and-match.git
+   cd flip-and-match
+Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copy code
+npm install
+Run the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+Copy code
+npm start
+Access the application:
+Open your browser and go to http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+File Structure
+lua
+Copy code
+flip-and-match/
+├── public/
+│   ├── sounds/
+│   │   ├── click.wav
+│   │   ├── match.wav
+│   │   ├── unmatch.wav
+│   │   └── complete.wav
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   └── Card.js
+│   ├── App.js
+│   ├── App.css
+│   └── index.js
+├── package.json
+└── README.md
+How to Play
+Click on a card to reveal its image.
+Click on another card to try to find its match.
+If the cards match, they stay flipped. If not, they flip back.
+Match all pairs to complete the level and progress to the next one.
+Use the Refresh button to restart the current level.
+Contributing
+Contributions are welcome! If you find a bug or want to add a new feature:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Fork the repository.
+Create a new branch:
+bash
+Copy code
+git checkout -b feature-name
+Commit your changes:
+bash
+Copy code
+git commit -m "Add your message here"
+Push to the branch:
+bash
+Copy code
+git push origin feature-name
+Open a pull request.
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-## Learn More
+Acknowledgments
+Lorem Picsum and Unsplash for the dynamic images
+Bootstrap for the responsive design
+AAK Studio for development
+Support
+If you enjoyed this game, consider supporting us:
+Buy Me a Coffee
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy gaming! 🎮

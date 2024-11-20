@@ -15,12 +15,8 @@ A fun and interactive memory game built with React.js, styled with Bootstrap, an
 
 ## Demo
 
-[Live Demo](#) - Link to your deployed application (e.g., on Netlify, Vercel, or GitHub Pages)
+[Live Demo](#) - https://flip-and-match.vercel.app/
 
-## Screenshot
-
-![Game Screenshot](#)  
-_Add a screenshot of your game here._
 
 ## Technologies Used
 
